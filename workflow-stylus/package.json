@@ -1,0 +1,28 @@
+{
+  "name": "workflow-stylus",
+  "version": "1.0.0",
+  "description": "Simple workflow for web project, specifically for FrontEnd, with Stylus",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "gulp",
+    "stylus"
+  ],
+  "author": "Ednilson Amaral <ednilsonamaral.ti@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.9.3",
+    "browser-sync": "^2.12.7",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.3.1",
+    "gulp-watch": "^4.3.5"
+  }
+}
