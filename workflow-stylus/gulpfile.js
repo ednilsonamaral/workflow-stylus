@@ -1,30 +1,27 @@
 'use strict';
 
-//dev dependencies
+//Dev dependencies
 const gulp = require('gulp'),
-      plumber = require('gulp-plumber'),
-      browserSync = require('browser-sync'),
-      stylus = require('gulp-stylus'),
-      uglify = require('gulp-uglify'),
-      concat = require('gulp-concat'),
-      prefixer = require('autoprefixer-stylus'),
-      imagemin = require('gulp-imagemin'),
-      watch = require('gulp-watch'),
-      rename = require('gulp-rename'),
-      cleanCSS = require('gulp-clean-css'),
-      pug = require('gulp-pug'),
-      nib = require('nib')
-      cp = require('child_process');
+      plugins = require('gulp-load-plugins')(),
+      config = require('./config.json');
 
-//browser-sync tasks
-gulp.task('browser-sync', function() {
-    browserSync({
-        server: {
-            baseDir: '_public/'
-        }
-    });
+//Browser Sync Task
+require(config.tasksPath + '/browser-sync')(gulp, plugins, config);
 
-    gulp.watch("_source/css/**/*.styl", ['stylus']);
-    gulp.watch("_source/img/**/*.{jpg,png,gif}", ['imagemin']);
-    gulp.watch("_source/**/*.html").on('change', browserSync.reload);
-});
+//Stylus Task
+require(config.tasksPath + '/stylus')(gulp, plugins, config);
+
+//Pug Task
+require(config.tasksPath + '/pug')(gulp, plugins, config);
+
+//JS Task
+require(config.tasksPath + '/js-compile')(gulp, plugins, config);
+
+//Default Task
+require(config.tasksPath + '/imagemin')(gulp, plugins, config);
+
+//Watch Task
+require(config.tasksPath + '/watch')(gulp, plugins, config);
+
+//Default Task
+require(config.tasksPath + '/default')(gulp, plugins, config);
