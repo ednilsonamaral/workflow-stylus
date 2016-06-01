@@ -6,7 +6,7 @@ module.exports = function (gulp, plugins, config) {
             gulp.start('stylus');
         });
 
-        //Build Pug
+        // Build Pug
         plugins.watch(config.pugSrcFolder + '/**/*.pug', function () {
             gulp.start('pug');
         });

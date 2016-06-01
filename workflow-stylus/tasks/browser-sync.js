@@ -1,6 +1,5 @@
 module.exports = function (gulp, plugins, config) {
     plugins.browserSync = require('browser-sync').create();
-    const reload = plugins.browserSync.reload;
 
     gulp.task('browser-sync', function() {
        plugins.browserSync.init({
@@ -9,7 +8,7 @@ module.exports = function (gulp, plugins, config) {
           }
        });
 
-       plugins.watch(config.stylusSrcFolder + "/**/*.styl", ['stylus']);
-       plugins.watch([config.pugDestFolder + "/**/*.html", config.pugDestFolder + "/index.html"]).on("change", reload);
-    });
+       gulp.watch(config.stylusSrcFolder + "/**/*.styl", ['stylus']);
+       gulp.watch(["./_public/**/*.html", "./_public/index.html"]).on("change", plugins.browserSync.reload);
+   });
 };

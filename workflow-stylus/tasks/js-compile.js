@@ -8,6 +8,6 @@ module.exports = function (gulp, plugins, config) {
           .pipe(plugins.uglify()) //minifica
           .pipe(plugins.sourcemaps.write()) //escreve o sourcemaps
           .pipe(gulp.dest(config.jsDestFolder)) //envia para _public/js
-          .pipe(reload({stream: true}));
+          .pipe(plugins.browserSync.reload({stream: true}));
     });
 };

@@ -5,7 +5,6 @@ module.exports = function (gulp, plugins, config) {
           prefixer = require('autoprefixer-stylus');
 
     plugins.browserSync = require('browser-sync').create();
-    const reload = plugins.browserSync.reload;
 
     gulp.task('stylus', function(){
         gulp.src(config.stylusSrcFolder + '/main.styl')
@@ -17,6 +16,6 @@ module.exports = function (gulp, plugins, config) {
             .pipe(gulp.dest(config.stylusSrcFolder))
             .pipe(plugins.rename('styles.css'))
             .pipe(gulp.dest(config.stylusDestFolder))
-            .pipe(reload({stream: true}));
+            .pipe(plugins.browserSync.reload({stream: true}));
     });
 };
