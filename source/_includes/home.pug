@@ -32,6 +32,52 @@ div.description
         span.arquivo-code require
         | .
 
+    p.text
+        | Após todas as tarefas em arquivos separados, Gulp modularizado, belezinha, o arquivo&#32;
+        span.arquivo-code gulpfile.js
+        | &#32;ficou dessa forma:
+
+    p.text
+        pre
+            code
+                | 'use strict';
+
+                | //Dev dependencies
+                | const gulp = require('gulp'),
+                | plugins = require('gulp-load-plugins')(),
+                | config = require('./config.json');
+
+                | //Browser Sync Task
+                | require(config.tasksPath + '/browser-sync')(gulp, plugins, config);
+
+                | //Stylus Task
+                | require(config.tasksPath + '/stylus')(gulp, plugins, config);
+
+                | //Pug Task
+                | require(config.tasksPath + '/pug')(gulp, plugins, config);
+
+                | //JS Task
+                | require(config.tasksPath + '/js-compile')(gulp, plugins, config);
+
+                | //Default Task
+                | require(config.tasksPath + '/imagemin')(gulp, plugins, config);
+
+                | //Watch Task
+                | require(config.tasksPath + '/watch')(gulp, plugins, config);
+
+                | //Default Task
+                | require(config.tasksPath + '/default')(gulp, plugins, config);
+
     p.text Para entendermos melhor como ficou tudo, a imagem a seguir mostra como ficou a estrutura de arquivos:
 
-    img(src='img/workflow-estrutura.png')
+    div.workflow-estrutura
+        div.workflow-image
+            img.image(src='img/workflow-estrutura.png')
+        div.workflow-list
+            ul
+                li
+                    span - Nome da Pasta
+                    p Explicação do que tem na pasta e como irá funcionar.
+
+    div.cf
+        p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
