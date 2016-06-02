@@ -9,6 +9,6 @@ module.exports = function (gulp, plugins, config) {
        });
 
        gulp.watch(config.stylusSrcFolder + "/**/*.styl", ['stylus']);
-       gulp.watch(["./_public/**/*.html", "./_public/index.html"]).on("change", plugins.browserSync.reload);
+       gulp.watch([config.pugDestFolder + "/**/*.html", config.pugDestFolder + "/index.html"]).on("change", plugins.browserSync.reload);
    });
 };

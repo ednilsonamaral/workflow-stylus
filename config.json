@@ -1,11 +1,11 @@
 {
     "tasksPath": "./tasks",
-    "stylusSrcFolder": "./_source/css",
-    "stylusDestFolder": "./_public/css",
-    "pugSrcFolder": "./_source",
-    "pugDestFolder": "./_public",
-    "jsSrcFolder": "./_source/js",
-    "jsDestFolder": "./_public/js",
-    "imgSrcFolder": "./_source/img",
-    "imgDestFolder": "./_public/img"
+    "stylusSrcFolder": "./source/css",
+    "stylusDestFolder": "./css",
+    "pugSrcFolder": "./source",
+    "pugDestFolder": "./",
+    "jsSrcFolder": "./source/js",
+    "jsDestFolder": "./js",
+    "imgSrcFolder": "./source/img",
+    "imgDestFolder": "./img"
 }
