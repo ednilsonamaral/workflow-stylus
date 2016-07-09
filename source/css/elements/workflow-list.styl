@@ -2,6 +2,10 @@
     col(10/12)
     padding-left 30px
 
+    +below($laptop)
+        center(100%)
+        float none !important
+
     ul
         li
             list-style square
@@ -9,6 +13,10 @@
 
             &:last-child
                 margin-bottom 0
+
+        .normal-list
+            margin-bottom 0
+            margin-left 50px
 
             p
                 margin-top 15px
